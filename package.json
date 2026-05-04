@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "framer-motion": "^12.38.0",
-    "next": "latest",
+    "next": "^16.2.4",
+    "pdfjs-dist": "^5.7.284",
     "react": "latest",
     "react-dom": "latest"
   },

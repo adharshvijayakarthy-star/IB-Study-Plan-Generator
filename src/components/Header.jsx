@@ -1,6 +1,12 @@
 "use client";
 
-const navItems = ["Home", "Planner", "Focus", "Settings"];
+const navItems = [
+  { label: "Home", id: "home" },
+  { label: "Planner", id: "planner" },
+  { label: "Exam Portions", id: "exam-portions" },
+  { label: "Focus", id: "focus" },
+  { label: "Settings", id: "settings" },
+];
 
 export default function Header({ view, onViewChange }) {
   return (
@@ -11,16 +17,14 @@ export default function Header({ view, onViewChange }) {
 
       <nav className="nav">
         {navItems.map((item) => {
-          const viewId = item.toLowerCase();
-
           return (
             <button
-              key={item}
-              className={`btn ${view === viewId ? "active" : ""}`}
+              key={item.id}
+              className={`btn ${view === item.id ? "active" : ""}`}
               type="button"
-              onClick={() => onViewChange(viewId)}
+              onClick={() => onViewChange(item.id)}
             >
-              {item}
+              {item.label}
             </button>
           );
         })}
